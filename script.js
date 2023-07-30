@@ -1,3 +1,18 @@
+
+// add time blocks to div container using jquery (3 columns in a row, 9 rows):
+//  - first time in format '12AM'
+//  - then task container
+//  - then save icon
+// create formatting feature to color code time block:
+//  - grey for past
+//  - red for in progress
+//  - green for upcoming
+// add functionality so when user clicks into time block:
+//  - can edit the text content on focus
+//  - hardcode the content on blur
+// when user clicks the save button icon the text for the event saves into local storage via an array object
+// when user refreshes page - get the object array from local storage and recreate the events on the page
+
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
@@ -15,6 +30,20 @@ $(function () {
 
     localStorage.setItem('savedEvent', savedEvent);
   });
+// created an array to hold all the hours of a work day, but the minute value is wrong
+  var workHours = [
+    dayjs().hour(9).format(`h:mm a`),
+    dayjs().hour(10).format(`h:mm a`),
+    dayjs().hour(11).format(`h:mm a`),
+    dayjs().hour(12).format(`h:mm a`),
+    dayjs().hour(13).format(`h:mm a`),
+    dayjs().hour(14).format(`h:mm a`),
+    dayjs().hour(15).format(`h:mm a`),
+    dayjs().hour(16).format(`h:mm a`),
+    dayjs().hour(17).format(`h:mm a`),
+    dayjs().hour(18).format(`h:mm a`),
+  ];
+console.log(workHours);
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. Is the code above correct?  Am I supposed to save the whole row in local storage?
