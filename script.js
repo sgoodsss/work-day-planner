@@ -43,7 +43,11 @@ $(function () {
     dayjs().hour(17).format(`h:mm a`),
     dayjs().hour(18).format(`h:mm a`),
   ];
-console.log(workHours);
+
+  var timeBlock = $('.container')
+  // how do I make this what is in my workHours array?  and how do I apply the grid to it?
+  timeBlock.append(`workHours[i]`)
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. Is the code above correct?  Am I supposed to save the whole row in local storage?
