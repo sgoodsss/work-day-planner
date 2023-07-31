@@ -30,24 +30,21 @@ $(function () {
 
     localStorage.setItem('savedEvent', savedEvent);
   });
-// created an array to hold all the hours of a work day, but the minute value is wrong
+// Array to hold all hours of the workday
   var workHours = [
-    dayjs().hour(9).format(`h:mm a`),
-    dayjs().hour(10).format(`h:mm a`),
-    dayjs().hour(11).format(`h:mm a`),
-    dayjs().hour(12).format(`h:mm a`),
-    dayjs().hour(13).format(`h:mm a`),
-    dayjs().hour(14).format(`h:mm a`),
-    dayjs().hour(15).format(`h:mm a`),
-    dayjs().hour(16).format(`h:mm a`),
-    dayjs().hour(17).format(`h:mm a`),
-    dayjs().hour(18).format(`h:mm a`),
+    dayjs().hour(9).minute(0).format(`h:mm a`),
+    dayjs().hour(10).minute(0).format(`h:mm a`),
+    dayjs().hour(11).minute(0).format(`h:mm a`),
+    dayjs().hour(12).minute(0).format(`h:mm a`),
+    dayjs().hour(13).minute(0).format(`h:mm a`),
+    dayjs().hour(14).minute(0).format(`h:mm a`),
+    dayjs().hour(15).minute(0).format(`h:mm a`),
+    dayjs().hour(16).minute(0).format(`h:mm a`),
+    dayjs().hour(17).minute(0).format(`h:mm a`),
   ];
-
   var timeBlock = $('.container')
   // how do I make this what is in my workHours array?  and how do I apply the grid to it?
-  timeBlock.append(`workHours[i]`)
-
+  timeBlock.append(`workHours[]`)
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. Is the code above correct?  Am I supposed to save the whole row in local storage?
@@ -67,5 +64,4 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-  // TODO: Add code to display the current date in the header of the page.
 });
