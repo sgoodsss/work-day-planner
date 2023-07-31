@@ -9,16 +9,14 @@
 var saveButton = $(`.saveBtn`);
 // select the text area
 var textArea = $(`#textarea`);
-// stores current time
-var currentTime = dayjs().format('hA');
-// stores current time in number value
-var currentTimeNumber = dayjs().format('h')
+// stores current time in 24 hour number value
+var currentTimeNumber = dayjs().format(`HH`)
 console.log(currentTimeNumber);
 // select the time container to apply past/present/future class???
-var numberHour = $(`.row`);
-// array of numbers of work hours
-var arrayHourNumber = ['hour-9', `hour-10`, `hour-11`, `hour-12`, `hour-13`, `hour-14`, `hour-15`, `hour-16`, `hour-17`,];
-
+// var numberHour = $(`.row`);
+// var numberHour = $("div:data(id)");
+var numberHour = document.querySelectorAll("#9, #10, #11, #12, #13, #14, #15, #16, #17");
+console.log(numberHour);
 // isn't this the code below jQuery document ready function?
 $(function () {
   var currentDay = dayjs();
@@ -32,7 +30,7 @@ $(function () {
     localStorage.setItem('savedEvent', savedEvent);
   });
 // Else If statement to assign past, present, or future class
-  // what do I put for x so that it uses the div id=#
+  // what do I put for x so that it uses the div id=# and compares that number to the current time
      numberHour.each(function () {
        if (x < currentTimeNumber) {
           numberHour.addClass(`past`);
