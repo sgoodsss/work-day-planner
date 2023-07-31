@@ -1,4 +1,3 @@
-
 // add time blocks to div container using jquery (3 columns in a row, 9 rows):
 //  - first time in format '12AM'
 //  - then task container
@@ -21,7 +20,7 @@
 $(function () {
   var currentDay = dayjs();
   $(`#currentDay`).text(currentDay.format(`dddd, MMMM D YYYY, h:mm:ss a`));
-
+  // selected the save button
   var saveButton = $(`.saveBtn`);
 
   saveButton.on('click', function () {
@@ -32,19 +31,25 @@ $(function () {
   });
 // Array to hold all hours of the workday
   var workHours = [
-    dayjs().hour(9).minute(0).format(`h:mm a`),
-    dayjs().hour(10).minute(0).format(`h:mm a`),
-    dayjs().hour(11).minute(0).format(`h:mm a`),
-    dayjs().hour(12).minute(0).format(`h:mm a`),
-    dayjs().hour(13).minute(0).format(`h:mm a`),
-    dayjs().hour(14).minute(0).format(`h:mm a`),
-    dayjs().hour(15).minute(0).format(`h:mm a`),
-    dayjs().hour(16).minute(0).format(`h:mm a`),
-    dayjs().hour(17).minute(0).format(`h:mm a`),
+    dayjs().hour(9).format(`hA`),
+    dayjs().hour(10).format(`hA`),
+    dayjs().hour(11).format(`hA`),
+    dayjs().hour(12).format(`hA`),
+    dayjs().hour(13).format(`hA`),
+    dayjs().hour(14).format(`hA`),
+    dayjs().hour(15).format(`hA`),
+    dayjs().hour(16).format(`hA`),
+    dayjs().hour(17).format(`hA`),
   ];
-  var timeBlock = $('.container')
-  // how do I make this what is in my workHours array?  and how do I apply the grid to it?
-  timeBlock.append(`workHours[]`)
+  // how do I select only the area of the time?
+  var timeBlock = $('.time-block');
+  // How do I get the items in the array to print one by one
+  timeBlock.append(workHours);
+
+  // select the text area
+  var textArea = $(`#textarea`);
+
+
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. Is the code above correct?  Am I supposed to save the whole row in local storage?
