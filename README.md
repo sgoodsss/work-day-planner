@@ -24,9 +24,13 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 On 08/01/2023, I had a one hour tutoring session with Savien Love. She helped answer my questions on how to traverse the DOM and access data saved to local storage. The rest of the resources I used are listed below:
 
 References
+
 day.js. (n.d.). Format Day.js. Day.js. Retrieved July 30, 2023, from https://day.js.org/docs/en/display/format
+
 javascript - Selecting multiple divs with same class. (2014, October 10). Stack Overflow. Retrieved July 31, 2023, from https://stackoverflow.com/questions/26295665/selecting-multiple-divs-with-same-class
+
 JQuery. (n.d.). .removeClass(). jQuery API Documentation. Retrieved July 31, 2023, from https://api.jquery.com/removeclass/
+
 West, M. (2022, November 25). How to Store Data in LocalStorage in JavaScript [Article]. Treehouse Blog. Retrieved July 30, 2023, from https://blog.teamtreehouse.com/storing-data-on-the-client-with-localstorage
 
 ## License
