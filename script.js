@@ -12,11 +12,11 @@ var textArea = $(`#textarea`);
 // stores current time in 24 hour number value
 var currentTimeNumber = dayjs().format(`HH`)
 console.log(currentTimeNumber);
-// select the time container to apply past/present/future class???
+// select the time container to apply past/present/future class
 // var numberHour = $(`.row`);
 // var numberHour = $("div:data(id)");
-var numberHour = document.querySelectorAll("#9, #10, #11, #12, #13, #14, #15, #16, #17");
-console.log(numberHour);
+var numberHour = document.querySelectorAll(`.time-block`);
+// console.log(numberHour);
 // isn't this the code below jQuery document ready function?
 $(function () {
   var currentDay = dayjs();
@@ -24,34 +24,33 @@ $(function () {
 
 // Listener for click events on the save button.  Is the code below correct?  Am I supposed to save the whole row in local storage?
   saveButton.on('click', function () {
-    console.log(`I was clicked!`)
-    var savedEvent = $(`.time-block`);
-
-    localStorage.setItem('savedEvent', savedEvent);
+    // console.log(`I was clicked!`)
+    var savedEvent =this.parentElement.children[1].value;
+    var key = (this.parentElement.id);
+    console.log(savedEvent);
+    localStorage.setItem(key, savedEvent);
   });
 // Else If statement to assign past, present, or future class
-  // what do I put for x so that it uses the div id=# and compares that number to the current time
-     numberHour.each(function () {
-       if (x < currentTimeNumber) {
-          numberHour.addClass(`past`);
-       } else if (x === currentTimeNumber) {
-          numberHour.addClass(`present`);
-          numberHour.removeClass(`past`);
+     $(`.time-block`).each(function () {
+      // Turns id into a number
+      var parseNumber = parseInt(this.id);
+      // select the time container to apply past/present/future class
+      var colorDiv = this.children[1];
+      console.log(colorDiv);
+       if (parseNumber < currentTimeNumber) {
+          colorDiv.classList.add(`past`);
+       } else if (parseNumber === currentTimeNumber) {
+          colorDiv.classList.add(`present`);
+          colorDiv.classList.remove(`past`);
        } else {
-          numberHour.addClass(`future`);
-          numberHour.removeClass(`past`);
-          numberHour.removeClass(`present`);
+          colorDiv.classList.add(`future`);
+          colorDiv.classList.remove(`past`);
+          colorDiv.classList.remove(`present`);
         }
       })
 
-  //  HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
+      // Copy for each number value of the 
+      $(`#15 .description`).val(localStorage.getItem(`15`));
+      $(`#16 .description`).val(localStorage.getItem(`16`));
 
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
 });
