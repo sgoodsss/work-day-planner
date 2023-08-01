@@ -1,4 +1,4 @@
-# <work-day-planner>
+# Work Day Planner
 
 ## Description
 
@@ -15,6 +15,9 @@ When a user opens the work-day-planner, the current date and time is displayed i
 - Text input box
 - Save button that saves input in the text box
 When a user enters data in the text box, it will be saved in local storage for them to view later.
+To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
+
+![alt text](assets/05-third-party-apis-homework-demo.gif)
 
 ## Credits
 
